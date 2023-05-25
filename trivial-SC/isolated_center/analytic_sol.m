@@ -1,7 +1,7 @@
+%%% 能隙方程的解析形式，用数值方法在k空间积分，取得吸引势的理论值
 clearvars
-
 int=integral(@(k) intg(k),-pi,pi);
-Ui = real(1./(int/(4*pi)))
+Ui = real(1./(int/(4*pi)));
 
 function result = intg(k)
 Sample = parameter();

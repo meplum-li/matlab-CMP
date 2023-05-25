@@ -1,4 +1,0 @@
-clearvars
-
-
-function result = intg(k)
