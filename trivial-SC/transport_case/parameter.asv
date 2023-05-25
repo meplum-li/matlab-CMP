@@ -1,7 +1,7 @@
 function Sample = parameter()
-Sample.mu=0.65;%进入哈密顿量中的化学势
+Sample.mu=0.6;%进入哈密顿量中的化学势
 Sample.h = 0.;%zeeman场
-Sample.delta = 0.297009105762161 - 0.000000928447838i;%超导配对势
+Sample.delta = 0.3;%超导配对势
 Sample.alphaR = 0.;%自旋轨道耦合的强度
 Sample.periodicity = 1;%1D case是否周期性边界条件
 Sample.eta = 1E-2;%小量，在接点击的情况下，该参数不应该参加计算；仅仅在孤立中心区起作用，为了收敛

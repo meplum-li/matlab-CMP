@@ -1,4 +1,4 @@
-%%% 上下电极接上中心区，平衡的情况下，考虑能隙方程，来确定吸引势的大小
+%%% 上下电极接上中心区，考虑有限偏压的情况
 %%% 采取周期性边界条件更接近理论值
 %%% 确定的吸引势用来在后续讨论中自洽计算gap
 clearvars
@@ -7,7 +7,9 @@ Sample = parameter();
 delta = Sample.delta;
 % eta = Sample.eta;
 int=integral(@(EF) Gless21(EF),-inf,inf,"ArrayValued",true,'RelTol',1e-2,'AbsTol',1e-13);
-Ui = delta./(-int/(2*pi*1i))
+Delta_i = -1.899599583176828 *int/(2*pi*1i)
+Qf=mean(Delta_i);
+Qi
 toc
 % tic
 % EF = linspace(-4,4,200);
