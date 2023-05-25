@@ -5,7 +5,7 @@ tic
 Sample = parameter();
 delta = Sample.delta;
 % eta = Sample.eta;
-int=integral(@(EF) Gless21(EF),-4,0.,"ArrayValued",true,'RelTol',1e-3,'AbsTol',1e-13);
+int=integral(@(EF) Gless21(EF),-4,0.,"ArrayValued",true,'RelTol',1e-6,'AbsTol',1e-13);
 Ui = delta./(-int/(2*pi*1i))
 toc
 % tic
