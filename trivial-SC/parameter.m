@@ -1,9 +1,10 @@
 function Sample = parameter()
-   Sample.mu=0.6;
+Sample.mu=0.6;
 Sample.h = 0.;
 Sample.delta = 0.3;
 Sample.alphaR = 0.;
-Sample.periodicity = 0;%1D case
+Sample.periodicity = 1;%1D case
+Sample.eta = 1E-6;
 
 %%%for mu
 Sample.A_mu_exU = 0.8;%absolute value

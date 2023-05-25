@@ -57,14 +57,14 @@ colorbar
 clim([-1,1])
 %%
 %%%能谱结构
-N_cen = 100;
+N_cen = 30;
 HH = kron(eye(N_cen), T_0) + kron(diag(ones(N_cen-1,1), 1), T_x) + kron(diag(ones(N_cen-1,1), -1), T_x');
 ENG = eig(HH);
 figure(Position=[100,1000,1800,500])
 subplot(1,3,1)
 plot(ENG,'s','Color', 'k','LineWidth',1.5)
 set(gca, 'FontSize', 20);
-ylim([-0.3,0.3])
+ylim([-0.4,0.4])
 
 subplot(1,3,2)
 ylim([-0.3,0.3])
