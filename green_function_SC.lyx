@@ -1,0 +1,860 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{bm}
+% \usepackage{ulem}
+\usepackage{subfigure}
+\usepackage[capitalize]{cleveref}
+\usepackage{epstopdf}
+\usepackage{romannum}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\end_preamble
+\options UTF8
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package none
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize default
+\spacing double
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 10text%
+\topmargin 15text%
+\rightmargin 10text%
+\bottommargin 15text%
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The below text refers to if we add 
+\begin_inset Quotes eld
+\end_inset
+
+adobefonts
+\begin_inset Quotes erd
+\end_inset
+
+ to the custom class options.
+ The text is outdated and will be updated to reflect this change soon.
+ The change was made because we no longer need proprietary fonts to compile
+ this document.
+ For example, it can be compiled with out-of-the-box TeX Live 2015.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+这是一份文章模板，如果要使用书籍或报告，请设置文档类为
+\family sans
+book (C\SpecialChar TeX
+)
+\family default
+或者
+\family sans
+report (C\SpecialChar TeX
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Green's Function in Superconductivity
+\end_layout
+
+\begin_layout Author
+Hailong Li
+\end_layout
+
+\begin_layout Date
+05/29/23
+\end_layout
+
+\begin_layout Section
+1D superconducting wire
+\end_layout
+
+\begin_layout Standard
+Consider the Hamiltonian of a 1D superconductivity below
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H=\sum_{k,\sigma}\epsilon_{k}a_{k\sigma}^{\dagger}a_{k\sigma}+\sum_{k}\Delta a_{k\uparrow}^{\dagger}a_{-k\downarrow}^{\dagger}+\sum_{k}\Delta^{*}a_{-k\downarrow}a_{k\uparrow}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Defining the retarded Green's function in terms of Nambu spinors, i.e., 
+\begin_inset Formula $A_{k}=\left(\begin{array}{c}
+a_{k\uparrow}\\
+a_{-k\downarrow}^{\dagger}
+\end{array}\right)$
+\end_inset
+
+, and 
+\begin_inset Formula $A_{k}^{\dagger}=\left(\begin{array}{cc}
+a_{k\uparrow}^{\dagger} & a_{-k\downarrow}\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+g_{kk'}^{r}(t,t') & = & \left\langle A_{k}(t)\mid A_{k'}^{\dagger}(t')\right\rangle ^{r}\nonumber \\
+\quad & = & \left(\begin{array}{cc}
+\left\langle a_{k\uparrow}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r} & \left\langle a_{k\uparrow}(t)\mid a_{-k'\downarrow}(t')\right\rangle ^{r}\\
+\left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r} & \left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{-k'\downarrow}(t')\right\rangle ^{r}
+\end{array}\right)
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\left\langle a_{k\uparrow}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r}\coloneqq-\mathrm{i\theta(t-t')}\left\langle \left\{ a_{k\uparrow}(t),a_{k'\uparrow}^{\dagger}(t')\right\} \right\rangle ^{r}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Next, applying the equation of motion method to Green's function
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\mathrm{i}\partial_{t}\left\langle a_{k\uparrow}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r} & = & \delta(t-t')\left\langle \left\{ a_{k\uparrow}(t),a_{k'\uparrow}^{\dagger}(t')\right\} \right\rangle -\mathrm{i}\theta(t-t')\left\langle \left\{ \left[a_{k\uparrow}(t),H(t)\right],a_{k'\uparrow}^{\dagger}(t')\right\} \right\rangle \nonumber \\
+\quad & = & \delta(t-t')\left\langle \left\{ a_{k\uparrow}(t),a_{k'\uparrow}^{\dagger}(t')\right\} \right\rangle +\left\langle \left\{ \left[a_{k\uparrow}(t),H(t)\right]\mid a_{k'\uparrow}^{\dagger}(t')\right\} \right\rangle ^{r}\nonumber \\
+\quad & = & \delta(t-t')\delta_{kk'}+\epsilon_{k\uparrow}\left\langle a_{k\uparrow}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r}+\Delta\left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r}\label{eq:EOM}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After F-T, the left hand side of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:EOM"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\int\mathrm{i}\partial_{t}\left\langle a_{k\uparrow}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r}e^{\mathrm{i}\omega(t-t')}\mathrm{d}t & = & \omega\left\langle a_{k\uparrow}\mid a_{k'\uparrow}^{\dagger}\right\rangle _{\omega}^{r}\equiv\omega g_{kk',11}^{r}(\omega)
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and the R.H.S.
+ reads
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\quad & \quad & \int\left[\delta(t-t')\delta_{kk'}+\epsilon_{k\uparrow}\left\langle a_{k\uparrow}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r}+\Delta\left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r}\right]e^{\mathrm{i}\omega(t-t')}\mathrm{d}t\nonumber \\
+\quad & = & \delta_{kk'}+\epsilon_{k\uparrow}\left\langle a_{k\uparrow}\mid a_{k'\uparrow}^{\dagger}\right\rangle _{\omega}^{r}+\Delta\left\langle a_{-k\downarrow}^{\dagger}\mid a_{k'\uparrow}^{\dagger}\right\rangle _{\omega}^{r}\\
+\quad & \equiv & \delta_{kk'}+\epsilon_{k\uparrow}g_{kk',11}^{r}(\omega)+\Delta g_{kk',21}^{r}(\omega)\nonumber 
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, 
+\begin_inset Formula 
+\begin{equation}
+\omega g_{kk',11}^{r}(\omega)=\delta_{kk'}+\epsilon_{k\uparrow}g_{kk',11}^{r}(\omega)+\Delta g_{kk',21}^{r}(\omega)\label{eq:g11e}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To make the EOM closed, considering the EOM of 
+\begin_inset Formula $\left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r}\equiv g_{kk',21}^{r}(t-t')$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\mathrm{i}\partial_{t}\left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r} & = & \left\langle \left\{ \left[a_{-k\downarrow}^{\dagger}(t),H(t)\right]\mid a_{k'\uparrow}^{\dagger}(t')\right\} \right\rangle ^{r}\nonumber \\
+\quad & = & -\epsilon_{-k}\left\langle a_{-k\downarrow}^{\dagger}\mid a_{k'\uparrow}^{\dagger}\right\rangle _{t-t'}^{r}+\Delta^{*}\left\langle a_{k\uparrow}\mid a_{k'\uparrow}^{\dagger}\right\rangle _{t-t'}^{r}\label{eq:g21t}\\
+\quad & \equiv & -\epsilon_{-k}g_{kk',21}^{r}(t-t')+\Delta^{*}g_{kk',11}^{r}(t-t')
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fourier Transformation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+G(\omega)=\int e^{\mathrm{i}\omega t}G(t)\mathrm{d}t\\
+G(t)=\int\frac{\mathrm{d}\omega}{2\pi}e^{-\mathrm{i}\omega t}G(\omega)
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Again, after F-T, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:g21t"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\omega g_{kk',21}^{r}(\omega) & = & -\epsilon_{-k}g_{kk',21}^{r}(\omega)+\Delta^{*}g_{kk',11}^{r}(\omega)\label{eq:g21e}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Combing 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:g11e"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:g21e"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+\omega g_{kk',11}^{r}(\omega)=\delta_{kk'}+\epsilon_{k\uparrow}g_{kk',11}^{r}(\omega)+\Delta g_{kk',21}^{r}(\omega)\\
+\omega g_{kk',21}^{r}(\omega)=-\epsilon_{-k}g_{kk',21}^{r}(\omega)+\Delta^{*}g_{kk',11}^{r}(\omega)
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, 
+\begin_inset Formula $\omega$
+\end_inset
+
+ always means 
+\begin_inset Formula $\omega+i0^{+}$
+\end_inset
+
+and 
+\begin_inset Formula $\epsilon_{k}=\epsilon_{-k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Solving the equations, 
+\begin_inset Formula $g_{kk',11}^{r}(\omega)$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{kk',21}^{r}(\omega)$
+\end_inset
+
+ reach their forms
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+g_{kk',11}^{r}(\omega)=\frac{\omega+\epsilon_{k}}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}}\delta_{kk'}\\
+g_{kk',21}^{r}(\omega)=\frac{\Delta^{*}}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}}\delta_{kk'}
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By now, we have obtained two of four elements of the retared Green's function.
+ As for the rest two, 
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+\omega g_{kk',22}^{r}(\omega)=\delta_{kk'}-\epsilon_{k\downarrow}g_{kk',22}^{r}(\omega)+\Delta^{*}g_{kk',12}^{r}(\omega)\\
+\omega g_{kk',12}^{r}(\omega)=\epsilon_{k}g_{kk',12}^{r}(\omega)+\Delta g_{kk',22}^{r}(\omega)
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+i.e.,
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+g_{kk',22}^{r}(\omega)=\frac{\omega-\epsilon_{k}}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}}\delta_{kk'}\\
+g_{kk',12}^{r}(\omega)=\frac{\Delta}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}}\delta_{kk'}
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Above all, the retared Green's function approches the form after F-T,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+{\color{red}g_{kk'}^{r}(\omega)} & {\color{red}=} & {\color{red}\left(\begin{array}{cc}
+\left\langle a_{k\uparrow}\mid a_{k'\uparrow}^{\dagger}\right\rangle ^{r} & \left\langle a_{k\uparrow}\mid a_{-k'\downarrow}\right\rangle ^{r}\\
+\left\langle a_{-k\downarrow}^{\dagger}\mid a_{k'\uparrow}^{\dagger}\right\rangle ^{r} & \left\langle a_{-k\downarrow}^{\dagger}\mid a_{-k'\downarrow}\right\rangle ^{r}
+\end{array}\right)_{\omega}}\nonumber \\
+{\color{red}} & {\color{red}=} & {\color{red}\left(\begin{array}{cc}
+\frac{\omega+\epsilon_{k}}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}} & \frac{\Delta}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}}\\
+\frac{\Delta^{*}}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}} & \frac{\omega-\epsilon_{k}}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}}
+\end{array}\right)\delta_{kk'}.}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Integrating out 
+\begin_inset Formula $k$
+\end_inset
+
+, we will get momentum-independent Green's function.
+ For example,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+g_{11}^{r}(\omega) & \coloneqq & \sum_{kk'}g_{kk'}^{r}(\omega)\nonumber \\
+ & = & \sum_{k}\frac{\omega+\epsilon_{k}}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}}\nonumber \\
+ & = & \int\mathrm{d}k\rho_{k}\frac{\omega+\epsilon_{k}}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}}\nonumber \\
+ & = & \int_{-\infty}^{+\infty}\mathrm{d}\epsilon_{k}\rho(\epsilon_{k})\frac{\omega+\epsilon_{k}}{\omega^{2}-\epsilon_{k}^{2}-\left|\Delta\right|^{2}}\nonumber \\
+ & = & -\rho\omega\int_{-\infty}^{+\infty}\mathrm{d}\epsilon\frac{1}{\epsilon^{2}+\left|\Delta\right|^{2}-\omega^{2}}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Focusing on the integral 
+\begin_inset Formula $\int_{-\infty}^{+\infty}\mathrm{d}\epsilon\frac{1}{\epsilon^{2}+\left|\Delta\right|^{2}-\omega^{2}}$
+\end_inset
+
+and keeping in mind that 
+\begin_inset Formula $\omega$
+\end_inset
+
+ always means 
+\begin_inset Formula $\omega+i0^{+}$
+\end_inset
+
+.
+ Thus, 
+\end_layout
+
+\begin_layout Enumerate
+when 
+\begin_inset Formula $\left|\omega\right|>\left|\Delta\right|$
+\end_inset
+
+, 
+\begin_inset Formula $\epsilon^{2}+\left|\Delta\right|^{2}-\omega^{2}=(\epsilon-\sqrt{\omega^{2}-\left|\Delta\right|^{2}})(\epsilon+\sqrt{\omega^{2}-\left|\Delta\right|^{2}})$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+the singular points are 
+\begin_inset Formula 
+\begin{align*}
+\epsilon & =\pm\sqrt{\omega^{2}-\left|\Delta\right|^{2}}\\
+ & =\pm\sqrt{\omega^{2}-\left|\Delta\right|^{2}+2\mathrm{i}\omega0^{+}}\\
+ & =\pm\left(\sqrt{\omega^{2}-\left|\Delta\right|^{2}}+\mathrm{i}\mathrm{sgn(\omega)0^{+}}\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+for a integral contour circling the upper half plane, the involved singular
+ points are
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{cases}
+\epsilon=\sqrt{\omega^{2}-\left|\Delta\right|^{2}}+\mathrm{i}\mathrm{0^{+}}, & \omega>0\\
+\epsilon=-\sqrt{\omega^{2}-\left|\Delta\right|^{2}}-\mathrm{i}\mathrm{0^{+}}, & \omega<0
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Then, the integral arrives at
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\int_{-\infty}^{+\infty}\mathrm{d}\epsilon\frac{1}{\epsilon^{2}+\left|\Delta\right|^{2}-\omega^{2}}=\begin{cases}
+\frac{2\pi\mathrm{i}}{2\sqrt{\omega^{2}-\left|\Delta\right|^{2}}}=\frac{\pi\mathrm{i}}{\sqrt{\omega^{2}-\left|\Delta\right|^{2}}} & \omega>\left|\Delta\right|\\
+\frac{2\pi\mathrm{i}}{-2\sqrt{\omega^{2}-\left|\Delta\right|^{2}}}=\frac{-\pi\mathrm{i}}{\sqrt{\omega^{2}-\left|\Delta\right|^{2}}} & \omega<-\left|\Delta\right|
+\end{cases}=\frac{\pi\mathrm{i}}{\sqrt{\omega^{2}-\left|\Delta\right|^{2}}}\frac{\left|\omega\right|}{\omega}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+when 
+\begin_inset Formula $\left|\omega\right|<\left|\Delta\right|$
+\end_inset
+
+, 
+\begin_inset Formula $\epsilon^{2}+\left|\Delta\right|^{2}-\omega^{2}=(\epsilon-\mathrm{i}\sqrt{\left|\Delta\right|^{2}-\omega^{2}})(\epsilon+\mathrm{i}\sqrt{\left|\Delta\right|^{2}-\omega^{2}})$
+\end_inset
+
+, the singular point locates in the upper half plane is 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\epsilon=\mathrm{i}\sqrt{\left|\Delta\right|^{2}-\omega^{2}}
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Thus, the integral arrives at
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\int_{-\infty}^{+\infty}\mathrm{d}\epsilon\frac{1}{\epsilon^{2}+\left|\Delta\right|^{2}-\omega^{2}} & =\frac{2\pi\mathrm{i}}{2\mathrm{i}\sqrt{\left|\Delta\right|^{2}-\omega^{2}}}\\
+ & =\frac{\pi}{\sqrt{\left|\Delta\right|^{2}-\omega^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The above analysis tells us 
+\begin_inset Formula 
+\begin{align*}
+\int_{-\infty}^{+\infty}\mathrm{d}\epsilon\frac{1}{\epsilon^{2}+\left|\Delta\right|^{2}-\omega^{2}} & =\frac{\mathrm{i}\pi}{\omega}\beta(\omega)\\
+\beta(\omega) & =\begin{cases}
+\frac{\left|\omega\right|}{\sqrt{\omega^{2}-\left|\Delta\right|^{2}}}, & \left|\omega\right|>\left|\Delta\right|\\
+\frac{\omega}{\mathrm{i}\sqrt{\left|\Delta\right|^{2}-\omega^{2}}}, & \left|\omega\right|<\left|\Delta\right|
+\end{cases}
+\end{align*}
+
+\end_inset
+
+and 
+\begin_inset Formula $g_{11}^{r}(\omega)=-\mathrm{i}\pi\rho\beta(\omega)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Finally,
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+\color red
+
+\begin_inset Formula 
+\[
+g_{11}^{r}(\omega)=-\mathrm{i}\pi\rho\beta(\omega)\left(\begin{array}{cc}
+1 & \nicefrac{\Delta}{\omega}\\
+\nicefrac{\Delta^{*}}{\omega} & 1
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+05/30/23
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From momentum space to real space, i.e., F-T again
+\end_layout
+
+\begin_layout Standard
+Definition:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+a_{x}=\sum_{k}e^{\mathrm{i}kx}a_{k}\\
+a_{k}=\frac{1}{N}\sum_{x}e^{-\mathrm{i}kx}a_{x}
+\end{cases}\xrightarrow{\mathrm{continous\:limit}}\begin{cases}
+a(x)=\int\frac{L}{2\pi}\mathrm{d}ke^{\mathrm{i}kx}a(k)\\
+a(k)=\int\frac{1}{L}\mathrm{d}xe^{-\mathrm{i}kx}a(x)
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\begin{array}{cc}
+\left\langle a_{k\uparrow}\mid a_{k'\uparrow}^{\dagger}\right\rangle ^{r} & \left\langle a_{k\uparrow}\mid a_{-k'\downarrow}\right\rangle ^{r}\\
+\left\langle a_{-k\downarrow}^{\dagger}\mid a_{k'\uparrow}^{\dagger}\right\rangle ^{r} & \left\langle a_{-k\downarrow}^{\dagger}\mid a_{-k'\downarrow}\right\rangle ^{r}
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+g_{11}^{r}(x_{1},x_{2}) & \coloneqq & \left\langle a_{\uparrow}(x_{1}),a_{\uparrow}^{\dagger}(x_{2})\right\rangle ^{r}\\
+ & = & \sum_{kk'}e^{\mathrm{i}kx_{1}}e^{-\text{\ensuremath{\mathrm{i}k'x_{2}}}}\left\langle a_{k\uparrow},a_{k'\uparrow}^{\dagger}\right\rangle ^{r}\\
+ & = & \sum_{k}e^{\mathrm{i}k(x_{1}-x_{2})}\left\langle a_{k\uparrow},a_{k\uparrow}^{\dagger}\right\rangle ^{r}\\
+ & = & \sum_{k}e^{\mathrm{i}k(x_{1}-x_{2})}g_{kk,11}^{r}
+\end{eqnarray*}
+
+\end_inset
+
+
+\uuline on
+Remark:the third equality comes from the 
+\begin_inset Formula $\delta_{kk'}$
+\end_inset
+
+ containing in 
+\begin_inset Formula $\left\langle a_{k\uparrow},a_{k'\uparrow}^{\dagger}\right\rangle ^{r}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+g_{12}^{r}(x_{1},x_{2}) & \coloneqq & \left\langle a_{\uparrow}(x_{1}),a_{\downarrow}(x_{2})\right\rangle ^{r}\\
+ & = & \sum_{kk'}e^{\mathrm{i}kx_{1}}e^{\text{\ensuremath{-\mathrm{i}k'x_{2}}}}\left\langle a_{k\uparrow},a_{-k'\downarrow}\right\rangle ^{r}\\
+ & = & \sum_{k}e^{\mathrm{i}k(x_{1}-x_{2})}\left\langle a_{k\uparrow},a_{-k\downarrow}\right\rangle ^{r}\\
+ & = & \sum_{k}e^{\mathrm{i}k(x_{1}-x_{2})}g_{kk,12}^{r}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The real-space retarded Green's function takes on its form accordingly,
+\end_layout
+
+\begin_layout Standard
+
+\color red
+\begin_inset Formula 
+\begin{equation}
+g^{r}(x_{1},x_{2};\omega)=\sum_{k}g_{kk}^{r}(\omega)e^{\mathrm{i}k(x_{1}-x_{2})}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+2D superconductor
+\end_layout
+
+\begin_layout Standard
+Consider the Hamiltonian below
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H=\sum_{k,\sigma}\epsilon_{k}a_{k\sigma}^{\dagger}a_{k\sigma}+\sum_{k}\Delta a_{k\uparrow}^{\dagger}a_{-k\downarrow}^{\dagger}+\sum_{k}\Delta^{*}a_{-k\downarrow}a_{k\uparrow}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Here, 
+\begin_inset Formula $k=(k_{x},k_{y})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Everything keep its form.
+ We consider the Green's function at 
+\begin_inset Formula $x=0$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+g^{r}(0,y_{1};0,y_{2};\omega) & =\sum_{k}g_{kk}^{r}(\omega)e^{\mathrm{i}k_{y}(y_{1}-y_{2})}\\
+ & =\sum_{k}\left(\begin{array}{cc}
+\left\langle a_{k\uparrow}\mid a_{k\uparrow}^{\dagger}\right\rangle ^{r} & \left\langle a_{k\uparrow}\mid a_{-k\downarrow}\right\rangle ^{r}\\
+\left\langle a_{-k\downarrow}^{\dagger}\mid a_{k\uparrow}^{\dagger}\right\rangle ^{r} & \left\langle a_{-k\downarrow}^{\dagger}\mid a_{-k\downarrow}\right\rangle ^{r}
+\end{array}\right)e^{\mathrm{i}k_{y}(y_{1}-y_{2})}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Here,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+g_{11}^{r}(0,y_{1};0,y_{2};\omega) & =\sum_{k}g_{kk,11}^{r}(\omega)e^{\mathrm{i}k_{y}(y_{1}-y_{2})}\\
+ & =\iint\mathrm{d}k_{x}\mathrm{d}k_{y}\rho_{k_{x}}\rho_{k_{y}}e^{\mathrm{i}k_{y}(y_{1}-y_{2})}g_{kk,11}^{r}(\omega)\\
+ & =\iint k\mathrm{d}k\mathrm{d}\theta\rho_{k}e^{\mathrm{i}k\sin\theta(y_{1}-y_{2})}g_{kk,11}^{r}(\omega)\\
+ & =\int k\mathrm{d}k\int\mathrm{d}\theta e^{\mathrm{i}k\sin\theta(y_{1}-y_{2})}\rho_{k}g_{kk,11}^{r}(\omega)\\
+ & =\int{\color{purple}k\mathrm{d}k2\pi\rho_{k}}J_{0}(k(y_{1}-y_{2}))g_{kk,11}^{r}(\omega)\\
+ & =\int{\color{purple}\rho_{\epsilon_{k}}\mathrm{d}\epsilon_{k}}J_{0}(k(y_{1}-y_{2}))g_{kk,11}^{r}(\omega)\sin
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
