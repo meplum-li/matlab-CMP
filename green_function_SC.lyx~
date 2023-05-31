@@ -664,12 +664,12 @@ Finally,
 \color red
 
 \begin_inset Formula 
-\[
+\begin{equation}
 g_{11}^{r}(\omega)=-\mathrm{i}\pi\rho\beta(\omega)\left(\begin{array}{cc}
 1 & \nicefrac{\Delta}{\omega}\\
 \nicefrac{\Delta^{*}}{\omega} & 1
-\end{array}\right)
-\]
+\end{array}\right)\label{eq:k_indep_gf}
+\end{equation}
 
 \end_inset
 
@@ -848,9 +848,335 @@ g_{11}^{r}(0,y_{1};0,y_{2};\omega) & =\sum_{k}g_{kk,11}^{r}(\omega)e^{\mathrm{i}
  & =\iint k\mathrm{d}k\mathrm{d}\theta\rho_{k}e^{\mathrm{i}k\sin\theta(y_{1}-y_{2})}g_{kk,11}^{r}(\omega)\\
  & =\int k\mathrm{d}k\int\mathrm{d}\theta e^{\mathrm{i}k\sin\theta(y_{1}-y_{2})}\rho_{k}g_{kk,11}^{r}(\omega)\\
  & =\int{\color{purple}k\mathrm{d}k2\pi\rho_{k}}J_{0}(k(y_{1}-y_{2}))g_{kk,11}^{r}(\omega)\\
- & =\int{\color{purple}\rho_{\epsilon_{k}}\mathrm{d}\epsilon_{k}}J_{0}(k(y_{1}-y_{2}))g_{kk,11}^{r}(\omega)
+ & =\int{\color{purple}\rho_{\epsilon_{k}}\mathrm{d}\epsilon_{k}}J_{0}(k(y_{1}-y_{2}))g_{kk,11}^{r}(\omega)\\
+ & =J_{0}(k_{F}(y_{1}-y_{2}))\int\mathrm{\text{\ensuremath{\rho_{\epsilon_{k}}}}d}\epsilon_{k}g_{kk,11}^{r}(\omega)
 \end{align*}
 
+\end_inset
+
+Combining 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:k_indep_gf"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+,
+\begin_inset Newline newline
+\end_inset
+
+
+\color red
+
+\begin_inset Formula 
+\begin{equation}
+g^{r}(0,y_{1};0,y_{2};\omega)=-\mathrm{i}\pi\rho J_{0}\left(k_{F}\left(y_{1}-y_{2}\right)\right)\beta(\omega)\left(\begin{array}{cc}
+1 & \nicefrac{\Delta}{\omega}\\
+\nicefrac{\Delta^{*}}{\omega} & 1
+\end{array}\right)
+\end{equation}
+
+\end_inset
+
+
+\color inherit
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Nambu basis,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+g_{ij}^{r}(t,t') & = & \left(\begin{array}{cc}
+\left\langle a_{i\uparrow}(t)\mid a_{j\uparrow}^{\dagger}(t')\right\rangle ^{r} & \left\langle a_{i\uparrow}(t)\mid a_{j\downarrow}(t')\right\rangle ^{r}\\
+\left\langle a_{i\downarrow}^{\dagger}(t)\mid a_{j\uparrow}^{\dagger}(t')\right\rangle ^{r} & \left\langle a_{i\downarrow}^{\dagger}(t)\mid a_{j\downarrow}(t')\right\rangle ^{r}
+\end{array}\right)\\
+g_{kk'}^{r}(t,t') & = & \left(\begin{array}{cc}
+\left\langle a_{k\uparrow}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r} & \left\langle a_{k\uparrow}(t)\mid a_{-k'\downarrow}(t')\right\rangle ^{r}\\
+\left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{r} & \left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{-k'\downarrow}(t')\right\rangle ^{r}
+\end{array}\right)
+\end{eqnarray*}
+
+\end_inset
+
+They are connected via F-T.
+\begin_inset Newline newline
+\end_inset
+
+Accordingly,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+g_{ij}^{a}(t,t') & =\left(\begin{array}{cc}
+\left\langle a_{i\uparrow}(t)\mid a_{j\uparrow}^{\dagger}(t')\right\rangle ^{a} & \left\langle a_{i\uparrow}(t)\mid a_{j\downarrow}(t')\right\rangle ^{a}\\
+\left\langle a_{i\downarrow}^{\dagger}(t)\mid a_{j\uparrow}^{\dagger}(t')\right\rangle ^{a} & \left\langle a_{i\downarrow}^{\dagger}(t)\mid a_{j\downarrow}(t')\right\rangle ^{a}
+\end{array}\right)\\
+g_{kk'}^{a}(t,t') & =\left(\begin{array}{cc}
+\left\langle a_{k\uparrow}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{a} & \left\langle a_{k\uparrow}(t)\mid a_{-k'\downarrow}(t')\right\rangle ^{a}\\
+\left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{k'\uparrow}^{\dagger}(t')\right\rangle ^{a} & \left\langle a_{-k\downarrow}^{\dagger}(t)\mid a_{-k'\downarrow}(t')\right\rangle ^{a}
+\end{array}\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+g_{ij,22}^{r}(t,t') & =\left\langle a_{i\downarrow}^{\dagger}(t)\mid a_{j\downarrow}(t')\right\rangle ^{r}\\
+ & =\underline{-\mathrm{i}\theta(t-t')\left\langle \left\{ a_{i\downarrow}^{\dagger}(t),a_{j\downarrow}(t')\right\} \right\rangle }
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+g_{ij,22}^{a}(t,t') & =\left\langle a_{i\downarrow}^{\dagger}(t)\mid a_{j\downarrow}(t')\right\rangle ^{a}\\
+ & =\underline{\mathrm{i}\theta(t'-t)\left\langle \left\{ a_{i\downarrow}^{\dagger}(t),a_{j\downarrow}(t')\right\} \right\rangle }
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+If under normal basis,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\mathcal{G}_{ij}^{a}(t,t') & \coloneqq\left\langle a_{i\downarrow}(t),a_{j\downarrow}^{\dagger}(t')\right\rangle ^{a}\\
+ & =\mathrm{i}\theta(t'-t)\left\langle \left\{ a_{i\downarrow}(t),a_{j\downarrow}^{\dagger}(t')\right\} \right\rangle 
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\mathcal{G}_{ji}^{a}(t',t) & \coloneqq\left\langle a_{j\downarrow}(t'),a_{i\downarrow}^{\dagger}(t)\right\rangle ^{a}\\
+ & =\underline{\mathrm{i}\theta(t-t')\left\langle \left\{ a_{j\downarrow}(t'),a_{i\downarrow}^{\dagger}(t)\right\} \right\rangle }
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\mathcal{G}_{ji}^{r}(t',t) & \coloneqq\left\langle a_{j\downarrow}(t'),a_{i\downarrow}^{\dagger}(t)\right\rangle ^{r}\\
+ & =\underline{\mathrm{-i}\theta(t'-t)\left\langle \left\{ a_{j\downarrow}(t'),a_{i\downarrow}^{\dagger}(t)\right\} \right\rangle }
+\end{align*}
+
+\end_inset
+
+So, 
+\begin_inset Formula 
+\[
+\begin{cases}
+g_{ij,22}^{r}(t,t')=-\mathcal{G}_{ji}^{a}(t',t)\\
+g_{ij,22}^{a}(t,t')=-\mathcal{G}_{ji}^{r}(t',t)
+\end{cases}
+\]
+
+\end_inset
+
+and
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+g_{ij,22}^{r}(\omega)=-\mathcal{G}_{ji}^{a}(-\omega)\\
+g_{ij,22}^{a}(\omega)=-\mathcal{G}_{ji}^{r}(-\omega)
+\end{cases}\label{eq:ra22}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+According to the definition of Keldysh Green's function in the Nambu basis,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+g_{ij}^{K}(\tau,\tau') & \coloneqq-\mathrm{i}\left\langle \mathcal{T_{\mathit{C}}}\left[A_{i}(\tau)A_{j}^{\dagger}(\tau')\right]\right\rangle 
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $A_{i}=\left(\begin{array}{c}
+a_{i\uparrow}\\
+a_{i\downarrow}^{\dagger}
+\end{array}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{j}^{\dagger}=\left(a_{j\uparrow}^{\dagger},a_{j\downarrow}\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mathrm{C}$
+\end_inset
+
+ denotes the contour from 
+\begin_inset Formula $+$
+\end_inset
+
+ branch to 
+\begin_inset Formula $-$
+\end_inset
+
+ branch.
+\begin_inset Newline newline
+\end_inset
+
+And now, by definition,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+g_{ij}^{<}(t,t') & =-\mathrm{i}\left\langle \mathcal{T_{\mathit{C}}}\left[A_{i}(\tau)A_{j}^{\dagger}(\tau')\right]\right\rangle ^{+-}\\
+ & =-\mathrm{i}\left(\begin{array}{cc}
+\left\langle T_{\mathit{C}}\left[a_{i\uparrow}(t)a_{j\uparrow}^{\dagger}(t')\right]\right\rangle  & \left\langle T_{\mathit{C}}\left[a_{i\uparrow}(t)a_{j\downarrow}(t')\right]\right\rangle \\
+\left\langle T_{\mathit{C}}\left[a_{i\downarrow}^{\dagger}(t)a_{j\uparrow}^{\dagger}(t')\right]\right\rangle  & \left\langle T_{\mathit{C}}\left[a_{i\downarrow}^{\dagger}(t)a_{j\downarrow}(t')\right]\right\rangle 
+\end{array}\right)^{+-}\\
+ & =\mathrm{i}\left(\begin{array}{cc}
+\left\langle a_{j\uparrow}^{\dagger}(t')a_{i\uparrow}(t)\right\rangle  & \left\langle a_{j\downarrow}(t')a_{i\uparrow}(t)\right\rangle \\
+\left\langle a_{j\uparrow}^{\dagger}(t')a_{i\downarrow}^{\dagger}(t)\right\rangle  & {\color{red}\underline{\left\langle a_{j\downarrow}(t')a_{i\downarrow}^{\dagger}(t)\right\rangle }}
+\end{array}\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+g_{ij}^{>}(t,t') & =-\mathrm{i}\left\langle \mathcal{T_{\mathit{C}}}\left[A_{i}(\tau)A_{j}^{\dagger}(\tau')\right]\right\rangle ^{-+}\\
+ & =-\mathrm{i}\left(\begin{array}{cc}
+\left\langle T_{\mathit{C}}\left[a_{i\uparrow}(t)a_{j\uparrow}^{\dagger}(t')\right]\right\rangle  & \left\langle T_{\mathit{C}}\left[a_{i\uparrow}(t)a_{j\downarrow}(t')\right]\right\rangle \\
+\left\langle T_{\mathit{C}}\left[a_{i\downarrow}^{\dagger}(t)a_{j\uparrow}^{\dagger}(t')\right]\right\rangle  & \left\langle T_{\mathit{C}}\left[a_{i\downarrow}^{\dagger}(t)a_{j\downarrow}(t')\right]\right\rangle 
+\end{array}\right)^{-+}\\
+ & =-\mathrm{i}\left(\begin{array}{cc}
+\left\langle a_{i\uparrow}(t)a_{j\uparrow}^{\dagger}(t')\right\rangle  & \left\langle a_{i\uparrow}(t)a_{j\downarrow}(t')\right\rangle \\
+\left\langle a_{i\downarrow}^{\dagger}(t)a_{j\uparrow}^{\dagger}(t')\right\rangle  & \left\langle a_{i\downarrow}^{\dagger}(t)a_{j\downarrow}(t')\right\rangle 
+\end{array}\right)
+\end{align*}
+
+\end_inset
+
+In the normal basis, 
+\begin_inset Formula $\mathcal{G}_{ij}^{>}(t,t')=-\mathrm{i}\left\langle a_{i\downarrow}(t)a_{j\downarrow}^{\dagger}(t')\right\rangle $
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $\mathcal{G}_{ji}^{>}(t',t)=-\mathrm{i}\underline{{\color{red}\left\langle a_{j\downarrow}(t')a_{i\downarrow}^{\dagger}(t)\right\rangle }},$
+\end_inset
+
+it is easy to obtain
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+g_{ij,22}^{<}(t,t')=-\mathcal{G}_{ji}^{>}(t',t)
+\end{equation}
+
+\end_inset
+
+as well as their F-T forms
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+g_{ij,22}^{<}(\omega)=-\mathcal{G}_{ji}^{>}(-\omega)\label{eq:less22}
+\end{equation}
+
+\end_inset
+
+Combining 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:ra22"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:less22"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+g_{ij,22}^{<}(\omega) & =-\mathcal{G}_{ji}^{>}(-\omega)\\
+ & =-\left(\mathcal{G}_{ji}^{<}+\mathcal{G}_{ji}^{r}-\mathcal{G}_{ji}^{a}\right)\left(-\omega\right)\\
+ & =-\left[-f(-\omega-eV)\left(\mathcal{G}_{ji}^{r}\left(-\omega\right)-\mathcal{G}_{ji}^{a}\left(-\omega\right)\right)+\mathcal{G}_{ji}^{r}\left(-\omega\right)-\mathcal{G}_{ji}^{a}\left(-\omega\right)\right]\\
+ & =-\left[1-f(-\omega-eV)\right]\left(\mathcal{G}_{ji}^{r}\left(-\omega\right)-\mathcal{G}_{ji}^{a}\left(-\omega\right)\right)\\
+ & =-f\left(\omega+eV\right)\left(\mathcal{G}_{ji}^{r}\left(-\omega\right)-\mathcal{G}_{ji}^{a}\left(-\omega\right)\right)\\
+ & =-f\left(\omega+eV\right)\left(-g_{ij,22}^{a}(\omega)--g_{ij,22}^{r}(\omega)\right)\\
+ & \underline{=-f\left(\omega+eV\right)\left[g_{ij,22}^{r}(\omega)-g_{ij,22}^{a}(\omega)\right]}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
 \end_inset
 
 
