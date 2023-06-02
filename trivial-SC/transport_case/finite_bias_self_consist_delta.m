@@ -1,24 +1,19 @@
-function delta_new = finite_bias_self_consist_delta(delta, mu0)
-%%% 上下电极接上中心区，考虑有限偏压的情况
-%%% 采取周期性边界条件更接近理论值
-%%% 确定的吸引势用来在后续讨论中自洽计算gap
+function delta_new = finite_bias_self_consist_delta(delta0, mu0)
+%finite_bias_self_consist_delta 单次迭代计算有限偏压下的超导配对势delta
+% 上下电极接上中心区，考虑有限偏压的情况
+% 采取周期性边界条件更接近理论值
+% 确定的吸引势用来在后续讨论中自洽计算gap
+% delta0: 初始输入的超导配对势
+% mu0: 中心区超导体的化学势，需要另行计算得到，再输入；由整体电流守恒给出mu0
 tic
 Sample = parameter();
 gap_RelTol = Sample.gap.RelTol;
 gap_AbsTol = Sample.gap.AbsTol;
-int=integral(@(EF) Gless21(Sample, EF, delta, mu0),-inf,inf,"ArrayValued",true,'RelTol',gap_RelTol,'AbsTol',gap_AbsTol);
+int=integral(@(EF) Gless21(Sample, EF, delta0, mu0),-inf,inf,"ArrayValued",true,'RelTol',gap_RelTol,'AbsTol',gap_AbsTol);
 Delta_i = -1.899599583176828 *int/(2*pi*1i);
 delta_new= mean(Delta_i);
-% diff_delta =[real(diff), imag(diff)];
-% Qf=mean(Delta_i);
-% Qi = delta;
-% RelErr=[(real(Qf)-real(Qi))/real(Qi),(imag(Qf)-imag(Qi))/imag(Qi)];
-% AbsErr = [(real(Qf)-real(Qi)),(imag(Qf)-imag(Qi))];
 ElapsedTime = toc;
-% fprintf('relative error:  (%+.2e, %+.2e)\n',RelErr)
-% fprintf('absolute error:  (%+.2e, %+.2e)\n',AbsErr)
 fprintf('time cost:  %.2f\n',ElapsedTime)
-
 % tic
 % EF = linspace(-4,4,200);
 % GPN = zeros(30,length(EF));

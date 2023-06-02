@@ -23,9 +23,9 @@ for ii = 1 : iter_max
     end
     delta_curr = delta_next;
 end
-    % converged fixed point
-    delta = delta_next;
-            delta_all(ii+1) = delta;
-        delta_all = delta_all(1:(ii+1));
-        RelErr = RelErr(:,1:ii);
-        AbsErr = AbsErr(:,1:ii);
+% converged fixed point
+delta = delta_next;
+delta_all(ii+1) = delta;
+delta_all = delta_all(1:(ii+1));
+RelErr = RelErr(:,1:ii);
+AbsErr = AbsErr(:,1:ii);

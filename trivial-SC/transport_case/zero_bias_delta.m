@@ -1,23 +1,25 @@
-function delta_new = finite_bias_self_consist_delta(delta, mu0)
-%%% 上下电极接上中心区，考虑有限偏压的情况
-%%% 采取周期性边界条件更接近理论值
-%%% 确定的吸引势用来在后续讨论中自洽计算gap
-tic
+function [delta_new_i] = zero_bias_delta(Ui, mu0, delta0)
+%zero_bias_Ui 连接导线、零偏压的情况、给定孤立中心的吸引势，单次迭代计算新的delta
+% 上下电极接上中心区，平衡的情况下，考虑能隙方程，来确定吸引势的大小
+% 采取周期性边界条件,只需要输入标量Ui
+% 确定的吸引势用来在后续讨论中自洽计算gap
+% Ui: 在位型有效吸引势
+% mu0: 超导的化学势
+% delta0: 初始化的试探delta0
+%delta_new_i: 周期性边界条件下返回一个标量
+% tic
 Sample = parameter();
-gap_RelTol = Sample1.gap.RelTol;
-gap_AbsTol = Sample1.gap.AbsTol;
-int=integral(@(EF) Gless21(EF, delta, mu0),-inf,inf,"ArrayValued",true,'RelTol',gap_RelTol,'AbsTol',gap_AbsTol);
-Delta_i = -1.899599583176828 *int/(2*pi*1i);
-delta_new= mean(Delta_i);
-% diff_delta =[real(diff), imag(diff)];
-% Qf=mean(Delta_i);
-% Qi = delta;
-% RelErr=[(real(Qf)-real(Qi))/real(Qi),(imag(Qf)-imag(Qi))/imag(Qi)];
-% AbsErr = [(real(Qf)-real(Qi)),(imag(Qf)-imag(Qi))];
-ElapsedTime = toc;
-% fprintf('relative error:  (%+.2e, %+.2e)\n',RelErr)
-% fprintf('absolute error:  (%+.2e, %+.2e)\n',AbsErr)
-fprintf('time cost:  %.2f\n',ElapsedTime)
+%     delta = Sample.delta;
+% eta = Sample.eta;
+gap_RelTol = Sample.gap.RelTol;
+gap_AbsTol = Sample.gap.AbsTol;
+int=integral(@(EF) Gless21(Sample, mu0, delta0, EF),-inf,inf,"ArrayValued",true,'RelTol',gap_RelTol,'AbsTol',gap_AbsTol);
+% Ui = -Sample.delta*2*pi*1i./int;
+delta_new_i = mean(-Ui *int/(2*pi*1i));
+% ElapsedTime = toc;
+% fprintf('%%------------------------\n')
+% fprintf('  delta_new_i\t   Time Cost\n')
+% fprintf('%12.8f     %8.2f\n',delta_new_i,ElapsedTime)
 
 % tic
 % EF = linspace(-4,4,200);
@@ -32,26 +34,26 @@ fprintf('time cost:  %.2f\n',ElapsedTime)
 % xlim([EF(1),EF(end)])
 % toc
 %%
-    function result = Gless21(EF, delta, mu0)
-        Sample = parameter();
-%         mu0=Sample.mu;
+    function result = Gless21(Sample, mu0, delta, EF)
+        %     Sample = parameter();
+        %     mu0=Sample.mu;
         h = Sample.h;
-        % delta = Sample.delta;
+%         delta = Sample.delta;
         alphaR = Sample.alphaR;
         periodcity = Sample.periodicity;
-%         eta = Sample.eta;
-%         sigma0 = eye(2);
+        eta = Sample.eta;
+        sigma0 = eye(2);
         sigmaX=[0,1;1,0];
         sigmaY=[0,-1i;1i,0];
         sigmaZ=[1,0;0,-1];
         T_0 = (2-mu0)*kron(sigmaZ, eye(2)) + h*kron(sigmaZ,sigmaZ) - kron( real(delta)*sigmaY+imag(delta)*sigmaX,sigmaY );
         T_x = -1*kron(sigmaZ, eye(2)) + alphaR/(2i)*kron(sigmaZ, sigmaY);
 
-        N_cen = 30;%中心区长度
+        N_cen = Sample.N_cen;%中心区长度
         %%%电极设置
         %都是金属
-        A_mu_exU = Sample.A_mu_exU;%absolute value
-        A_mu_exD = Sample.A_mu_exD;
+        A_mu_exU = mu0;%absolute value
+        A_mu_exD = mu0;
         mu_exU = A_mu_exU - mu0;%relative value
         mu_exD = A_mu_exD - mu0;
         gammaU = Sample.gammaU;%上导线的gamma
