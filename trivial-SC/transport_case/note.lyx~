@@ -125,14 +125,13 @@ which is satisfied under zero temerature.
 \begin_layout Standard
 Under periodic boundary conditions and zero bias, it is required to solve
  the gap equation self-consistently.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
 In Matlab, it is to solve the equation,
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset Formula 
 \[
 F\left(\Delta\right)=-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}[G_{ii}^{<}(\omega)]_{41}\mathrm{d\omega}-\Delta
@@ -141,55 +140,14 @@ F\left(\Delta\right)=-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}[G_{ii}^{<
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-For the funtion 
+\begin_layout Standard
+For the funtio 
 \shape italic
 fsolve
 \shape default
-, we supply 
-\begin_inset Formula $\partial_{\Delta}F$
-\end_inset
-
-,
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula 
-\begin{align*}
-\partial_{\Delta}F\left(\Delta\right) & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\partial_{\Delta}G_{41}^{<}(\omega)\mathrm{d\omega}-1\\
- & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\partial_{\Delta}\left(G^{R}\Sigma^{<}G^{A}\right)_{41}\mathrm{d\omega}-1\\
- & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left\{ \left(\partial_{\Delta}G^{R}\right)\Sigma^{<}G^{A}+G^{R}\Sigma^{<}\left(\partial_{\Delta}G^{A}\right)\right\} _{41}\mathrm{d\omega}-1\\
- & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left\{ \left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)\Sigma^{<}G^{A}+G^{R}\Sigma^{<}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)^{\dagger}\right\} _{41}\mathrm{d\omega}-1\\
- & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left\{ G^{*}-\left(G^{*}\right)^{\dagger}\right\} _{41}\mathrm{d\omega}-1
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Here, 
-\begin_inset Formula $G^{*}\coloneqq G^{R}\frac{\partial H}{\partial\Delta}G^{R}\Sigma^{<}G^{A}$
-\end_inset
-
-.
- It is also obvious to note that 
-\begin_inset Formula 
-\begin{align*}
--\left(G^{*}\right)^{\dagger} & =-\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\Sigma^{<}G^{A}\right)^{\dagger}\\
- & =-G^{R}\left(\Sigma^{<}\right)^{\dagger}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)^{\dagger}\\
- & =G^{R}\Sigma^{<}\left(\partial_{\Delta}G^{R}\right)^{\dagger}\\
- & =G^{R}\Sigma^{<}\partial_{\Delta}\left(G^{R}\right)^{\dagger}\\
- & =G^{R}\Sigma^{<}\partial_{\Delta}G^{A}
-\end{align*}
-
-\end_inset
-
-
+ s
 \end_layout
 
 \end_body

@@ -180,11 +180,9 @@ Here,
  It is also obvious to note that 
 \begin_inset Formula 
 \begin{align*}
--\left(G^{*}\right)^{\dagger} & =-\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\Sigma^{<}G^{A}\right)^{\dagger}\\
- & =-G^{R}\left(\Sigma^{<}\right)^{\dagger}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)^{\dagger}\\
- & =G^{R}\Sigma^{<}\left(\partial_{\Delta}G^{R}\right)^{\dagger}\\
- & =G^{R}\Sigma^{<}\partial_{\Delta}\left(G^{R}\right)^{\dagger}\\
- & =G^{R}\Sigma^{<}\partial_{\Delta}G^{A}
+\left(G^{*}\right)^{\dagger} & =\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\Sigma^{<}G^{A}\right)^{\dagger}\\
+ & =G^{R}\left(\Sigma^{<}\right)^{\dagger}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)^{\dagger}\\
+ & =-G^{R}\Sigma^{<}G^{a}
 \end{align*}
 
 \end_inset

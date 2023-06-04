@@ -1,4 +1,4 @@
-function diff_delta = zero_bias_delta(delta0)
+function [diff_delta] = zero_bias_delta(delta0)
 % function [diff_delta] = zero_bias_delta(Ui, mu0, delta0)
 %zero_bias_Ui 连接导线、零偏压的情况、给定孤立中心的吸引势，单次迭代计算新的delta
 % 上下电极接上中心区，平衡的情况下，考虑能隙方程，来确定吸引势的大小
@@ -17,7 +17,7 @@ Sample = parameter();
 % eta = Sample.eta;
 gap_RelTol = Sample.gap.RelTol;
 gap_AbsTol = Sample.gap.AbsTol;
-int=integral(@(EF) Gless21(Sample, mu0, delta0, EF),-inf,inf,"ArrayValued",true,'RelTol',gap_RelTol,'AbsTol',gap_AbsTol);
+[int]=integral(@(EF) Gless21(Sample, mu0, delta0, EF),-inf,inf,"ArrayValued",true,'RelTol',gap_RelTol,'AbsTol',gap_AbsTol);
 % Ui = -Sample.delta*2*pi*1i./int;
 delta_new_i = mean(-Ui *int/(2*pi*1i));
 diff_delta = abs(delta_new_i - delta0);
@@ -42,7 +42,7 @@ diff_delta = abs(delta_new_i - delta0);
 % xlim([EF(1),EF(end)])
 % toc
 %%
-    function result = Gless21(Sample, mu0, delta, EF)
+    function [result] = Gless21(Sample, mu0, delta, EF)
         %     Sample = parameter();
         %     mu0=Sample.mu;
         h = Sample.h;

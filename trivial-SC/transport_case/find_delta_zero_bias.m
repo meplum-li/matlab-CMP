@@ -1,6 +1,6 @@
 clearvars
 iter_max = 150;
-RelTol = 1e-5;
+RelTol = 1e-4;
 AbsTol = 1e-10;
 delta_all = zeros(1,iter_max+1);
 RelErr = zeros(2,iter_max+1);
@@ -8,13 +8,15 @@ AbsErr = zeros(2,iter_max+1);
 mu0 = 0.6;
 Ui = 1.74912443;
 % Ui = 1.7480;
-delta0 = 0.1529;
-delta_curr = delta0;
+delta0 = 0.3;
+Sample = parameter();
+% delta_curr = delta0*sqrt(1-(Sample.gammaU+Sample.gammaD)/delta0)+0.1;
+delta_curr = 0.0338 ;
 ElapsedTime = toc;
 info = ['iteration','   current delta','    AbsErr','   RelErr','   Time Cost\n'];
 fprintf('%%------------------------\n')
 fprintf(info)
-fprintf('%8d %13.5f %16.E %7.E %9.2f\n', [0,delta0,NaN, NaN,NaN])
+fprintf('%8d %13.5f %16.E %7.E %9.2f\n', [0,delta_curr,NaN, NaN,NaN])
 for ii = 1 : iter_max
     tic
     % fixed point estimate at first iteration
