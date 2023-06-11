@@ -1,5 +1,6 @@
 function Sample = parameter()
 Sample.mu=0.6;%进入哈密顿量中的化学势
+Sample.Ui = 5;%effective attractive potential
 Sample.h = 0.;%zeeman场
 Sample.delta = 0.3;%超导配对势
 Sample.alphaR = 0.;%自旋轨道耦合的强度
@@ -11,10 +12,10 @@ Sample.N_cen = 30;
 Sample.A_mu_exU = 0.6;%上电极的化学势，absolute value
 Sample.A_mu_exD = 0.6;%下电极的化学势
 Sample.A_mu_exBP = 0.6;%虚拟导线的化学势
-Sample.gammaU = 1.5E-2;%上导线的gamma
-Sample.gammaD = 1.5E-2;%上导线的gamma
+Sample.gammaU = 1E-1;%上导线的gamma
+Sample.gammaD = 1E-1;%上导线的gamma
 % gammaSC = 2*pi*1E-1;%下导线的gamma
-Sample.gammaBP = 1E-4*0;%虚拟导线的gamma
+Sample.gammaBP = 1E-1;%虚拟导线的gamma
 
 %%numerical precision
 Sample.gap.RelTol = 1e-2;

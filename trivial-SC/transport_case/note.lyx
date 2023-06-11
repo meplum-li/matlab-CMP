@@ -5,14 +5,11 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
-\begin_preamble
-\usepackage{graphicx}
-\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding auto
+\inputencoding utf8-plain
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -34,8 +31,8 @@
 \paperfontsize default
 \spacing single
 \use_hyperref false
-\papersize default
-\use_geometry false
+\papersize a4paper
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -60,6 +57,8 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 5page%
+\rightmargin 5page%
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -190,6 +189,568 @@ Here,
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section*
+06/08/23
+\end_layout
+
+\begin_layout Standard
+For a three-terminal device containing normal leads and superdonducting
+ central region, three conditions or equations are required as below
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+\sum_{i}I_{i}\coloneqq\widetilde{I}=0\\
+I_{BP}=0\\
+\Delta_{i}=-\frac{U_{i}}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}[G_{ii}^{<}(\omega)]_{41}\mathrm{d\omega}
+\end{cases}
+\end{equation}
+
+\end_inset
+
+The above three equations depends on 
+\begin_inset Formula $\left(\mu_{BP},\mu_{s},\Delta\right)$
+\end_inset
+
+, and it is necessary to consider the derivative with respect to them.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\color red
+\begin_inset Note Note
+status open
+
+\begin_layout Subsection*
+\begin_inset Formula $\partial_{\Delta}\tilde{I}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\color red
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial\tilde{I}}{\partial\Delta} & = & \sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*\frac{\partial T_{m\gamma,n\sigma}}{\partial\Delta}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ & = & \int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\partial_{\Delta}^{2}\tilde{I}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial^{2}\tilde{I}}{\partial\Delta^{2}} & = & \frac{\partial}{\partial\Delta}\left\{ \sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*\frac{\partial T_{m\gamma,n\sigma}}{\partial\Delta}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\right\} \\
+ & = & \frac{\partial}{\partial\Delta}\left\{ \int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\frac{\partial G^{R}}{\partial\Delta}\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\right\} \\
+ & = & \int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\frac{\partial^{2}G^{R}}{\partial\Delta^{2}}\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ &  & +\int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\frac{\partial G^{R}}{\partial\Delta}\Gamma_{n\sigma}\frac{\partial G^{A}}{\partial\Delta}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ & = & \int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\frac{\partial^{2}G^{R}}{\partial\Delta^{2}}\Gamma_{n\sigma}G^{A}+\Gamma_{m\gamma}\frac{\partial G^{R}}{\partial\Delta}\Gamma_{n\sigma}\frac{\partial G^{A}}{\partial\Delta}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Here, 
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial^{2}G^{R}}{\partial\Delta^{2}} & = & \frac{\partial}{\partial\Delta}\left(\frac{\partial G^{R}}{\partial\Delta}\right)\\
+ & = & \frac{\partial}{\partial\Delta}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)\\
+ & = & \frac{\partial G^{R}}{\partial\Delta}\frac{\partial H}{\partial\Delta}G^{R}+G^{R}\frac{\partial H}{\partial\Delta}\frac{\partial G^{R}}{\partial\Delta}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\partial_{\Delta}I_{BP}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial I_{BP}}{\partial\Delta} & = & \int\sum_{n,\gamma,\sigma}\gamma*\frac{\partial T_{BP\gamma,n\sigma}}{\partial\Delta}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ & = & \int\sum_{n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{BP\gamma}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{BP}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\color red
+When 
+\begin_inset Formula $\tilde{I}=0$
+\end_inset
+
+, if 
+\begin_inset Formula $\partial_{\Delta}\tilde{I}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\partial_{\Delta}^{2}\tilde{I}=0$
+\end_inset
+
+, gap equation and particle-number equation is decoupled.
+ Thus, we can self-consistently calculate 
+\begin_inset Formula $\left(\mu_{s},\mu_{BP}\right)$
+\end_inset
+
+ to satisfy the fisrt two equations, and then solve the gap equation delf-consis
+tently.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Self-consistly solve 
+\begin_inset Formula $\left(\mu_{s},\mu_{BP},\Delta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\partial_{\mu_{s}}\tilde{I}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Total current 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\widetilde{I} & =\sum_{m}I_{m}\\
+ & =\sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*T_{m\gamma,n\sigma}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Here, 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ denote the particle-hole index, taking 
+\begin_inset Formula $+1$
+\end_inset
+
+ for electron and 
+\begin_inset Formula $-1$
+\end_inset
+
+for hole.
+ 
+\begin_inset Formula $f_{m}^{\gamma}\left(\epsilon\right)=f_{0}\left[\epsilon-\gamma\left(\mu_{m}-\mu_{s}\right)\right]$
+\end_inset
+
+, where 
+\begin_inset Formula $f_{0}$
+\end_inset
+
+ is the Fermi distribution function.
+\begin_inset Newline newline
+\end_inset
+
+The derivative of 
+\begin_inset Formula $\widetilde{I}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mu_{s}$
+\end_inset
+
+,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial\tilde{I}}{\partial\mu_{s}}=\sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*\frac{\partial T_{m\gamma,n\sigma}}{\partial\mu_{s}}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon+\sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*T_{m\gamma,n\sigma}\frac{\partial\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]}{\partial\mu_{s}}\mathrm{d}\epsilon
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\partial_{\mu_{s}}T_{m\gamma,n\sigma}$
+\end_inset
+
+ in the first term,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\partial_{\mu_{s}}T_{m\gamma,n\sigma} & = & \partial_{\mu_{s}}\mathrm{Tr}\left(\Gamma_{m\gamma}G^{R}\Gamma_{n\sigma}G^{A}\right)\\
+ & = & \mathrm{Tr}\left[\Gamma_{m\gamma}\left(\partial_{\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]+\mathrm{Tr}\left[\Gamma_{m\gamma}G^{R}\Gamma_{n\sigma}\left(\partial_{\mu_{s}}G^{A}\right)\right]\\
+ & = & \mathrm{Tr}\left[\Gamma_{m\gamma}\left(\partial_{\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]+\mathrm{Tr}\left[\left(\Gamma_{m\gamma}\right)^{\dagger}\left(G^{A}\right)^{\dagger}\left(\Gamma_{n\sigma}\right)^{\dagger}\left(\partial_{\mu_{s}}G^{R}\right)^{\dagger}\right]\\
+ & = & \mathrm{Tr}\left[\Gamma_{m\gamma}\left(\partial_{\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]+\mathrm{Tr}\left[\left(G^{A}\right)^{\dagger}\left(\Gamma_{n\sigma}\right)^{\dagger}\left(\partial_{\mu_{s}}G^{R}\right)^{\dagger}\left(\Gamma_{m\gamma}\right)^{\dagger}\right]\\
+ & = & \mathrm{Tr}\left[\Gamma_{m\gamma}\left(\partial_{\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]+\mathrm{Tr}\left[\Gamma_{m\gamma}\left(\partial_{\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]^{\dagger}\\
+ & = & \mathrm{Tr}\left[\Gamma_{m\gamma}\left(G^{R}\frac{\partial H}{\partial\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]+\mathrm{Tr}\left[\Gamma_{m\gamma}\left(G^{R}\frac{\partial H}{\partial\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]^{\dagger}\\
+ & = & 2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\left(G^{R}\frac{\partial H}{\partial\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} 
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\partial_{\mu_{s}}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]$
+\end_inset
+
+ in the second term,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\partial_{\mu_{s}}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right] & = & \partial_{\mu_{s}}f_{m}^{\gamma}\left(\epsilon\right)-\partial_{\mu_{s}}f_{n}^{\sigma}\left(\epsilon\right)\\
+ & = & \partial_{\mu_{s}}f_{0}\left[\epsilon-\gamma\left(\mu_{m}-\mu_{s}\right)\right]-\partial_{\mu_{s}}f_{0}\left[\epsilon-\sigma\left(\mu_{n}-\mu_{s}\right)\right]\\
+ & = & \frac{\partial f_{0}\left[\epsilon-\gamma\left(\mu_{m}-\mu_{s}\right)\right]}{\partial\epsilon}\frac{\partial\left[\epsilon-\gamma\left(\mu_{m}-\mu_{s}\right)\right]}{\partial\mu_{s}}\\
+ &  & -\frac{\partial f_{0}\left[\epsilon-\sigma\left(\mu_{n}-\mu_{s}\right)\right]}{\partial\epsilon}\frac{\partial\left[\epsilon-\sigma\left(\mu_{n}-\mu_{s}\right)\right]}{\partial\mu_{s}}\\
+ & = & \left(-\gamma\right)*\delta\left[\epsilon-\gamma\left(\mu_{m}-\mu_{s}\right)\right]-\left(-\sigma\right)*\delta\left[\epsilon-\sigma\left(\mu_{n}-\mu_{s}\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Substituting 
+\begin_inset Formula $\partial_{\mu_{s}}T_{m\gamma,n\sigma}$
+\end_inset
+
+ and 
+\begin_inset Formula $\partial_{\mu_{s}}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]$
+\end_inset
+
+ into 
+\begin_inset Formula $\frac{\partial\tilde{I}}{\partial\mu_{s}}$
+\end_inset
+
+, we obtain
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial\tilde{I}}{\partial\mu_{s}} & = & \sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*\frac{\partial T_{m\gamma,n\sigma}}{\partial\mu_{s}}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon+\sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*T_{m\gamma,n\sigma}\frac{\partial\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]}{\partial\mu_{s}}\mathrm{d}\epsilon\\
+ & = & \int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\left(G^{R}\frac{\partial H}{\partial\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ &  & +\int\sum_{m,n,\gamma,\sigma}\gamma*T_{m\gamma,n\sigma}\left\{ \left(-\gamma\right)*\delta\left[\epsilon-\gamma\left(\mu_{m}-\mu_{s}\right)\right]-\left(-\sigma\right)*\delta\left[\epsilon-\sigma\left(\mu_{n}-\mu_{s}\right)\right]\right\} \mathrm{d}\epsilon\\
+ & = & \int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\left(G^{R}\frac{\partial H}{\partial\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ &  & +\sum_{m,n,\gamma,\sigma}\left\{ -T_{m\gamma,n\sigma}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]-\left(-\gamma*\sigma\right)T_{m\gamma,n\sigma}\left[\sigma\left(\mu_{n}-\mu_{s}\right)\right]\right\} \\
+ & = & \int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\left(G^{R}\frac{\partial H}{\partial\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ &  & +\sum_{m,n,\gamma,\sigma}\left\{ -T_{m\gamma,n\sigma}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]+\gamma*\sigma*T_{m\gamma,n\sigma}\left[\sigma\left(\mu_{n}-\mu_{s}\right)\right]\right\} 
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Here, 
+\begin_inset Formula $T_{m\gamma,n\sigma}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]$
+\end_inset
+
+ means evaluating the transmission matrix at the energy 
+\begin_inset Formula $\gamma\left(\mu_{m}-\mu_{s}\right)$
+\end_inset
+
+.
+ Above all,
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+{\color{red}\frac{\partial\tilde{I}}{\partial\mu_{s}}} & {\color{red}=} & {\color{red}\int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\left(G^{R}\frac{\partial H}{\partial\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon}\\
+{\color{red}} & {\color{red}} & {\color{red}+\sum_{m,n,\gamma,\sigma}\left\{ -T_{m\gamma,n\sigma}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]+\gamma*\sigma*T_{m\gamma,n\sigma}\left[\sigma\left(\mu_{n}-\mu_{s}\right)\right]\right\} }
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\partial_{\mu_{BP}}\tilde{I}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+{\color{red}\frac{\partial\tilde{I}}{\partial\mu_{BP}}} & = & \sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*\frac{\partial T_{m\gamma,n\sigma}}{\partial\mu_{BP}}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon+\sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*T_{m\gamma,n\sigma}\frac{\partial\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]}{\partial\mu_{BP}}\mathrm{d}\epsilon\\
+ & = & 0+\int\sum_{m,n,\gamma,\sigma}\gamma*T_{m\gamma,n\sigma}\frac{\partial\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]}{\partial\mu_{BP}}\mathrm{d}\epsilon\\
+ & = & \int\sum_{m,n,\gamma,\sigma}\gamma*T_{m\gamma,n\sigma}\left\{ \delta_{m,BP}*\gamma*\delta\left[\epsilon-\gamma\left(\mu_{BP}-\mu_{s}\right)\right]-\delta_{n,BP}*\sigma*\delta\left[\epsilon-\sigma\left(\mu_{BP}-\mu_{s}\right)\right]\right\} \mathrm{d}\epsilon\\
+ & = & \sum_{m,n,\gamma,\sigma}\left\{ \delta_{m,BP}T_{m\gamma,n\sigma}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]-\gamma*\sigma*\delta_{n,BP}T_{m\gamma,n\sigma}\left[\sigma\left(\mu_{BP}-\mu_{s}\right)\right]\right\} \\
+ & {\color{red}=} & {\color{red}\sum_{n,\gamma,\sigma}T_{BP\gamma,n\sigma}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]-\sum_{m,\gamma,\sigma}\gamma*\sigma*T_{m\gamma,BP\sigma}\left[\sigma\left(\mu_{BP}-\mu_{s}\right)\right]}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset Formula $\partial_{\Delta}\tilde{I}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+{\color{red}\frac{\partial\tilde{I}}{\partial\Delta}} & = & \sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*\frac{\partial T_{m\gamma,n\sigma}}{\partial\Delta}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ & {\color{red}=} & {\color{red}\int\sum_{m,n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{m\gamma}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\partial_{\mu_{s}}I_{BP}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+{\color{red}\partial_{\mu_{s}}I_{BP}} & = & \partial_{\mu_{s}}\int\sum_{n,\gamma,\sigma}\gamma*T_{BP\gamma,n\sigma}\left[f_{BP}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ & = & \int\sum_{n,\gamma,\sigma}\gamma*\frac{\partial T_{BP\gamma,n\sigma}}{\partial\mu_{s}}\left[f_{BP}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon+\int\sum_{n,\gamma,\sigma}\gamma*T_{BP\gamma,n\sigma}\frac{\partial\left[f_{BP}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]}{\partial\mu_{s}}\mathrm{d}\epsilon\\
+ & {\color{red}=} & {\color{red}\int\sum_{n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{BP\gamma}\left(G^{R}\frac{\partial H}{\partial\mu_{s}}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{BP}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon}\\
+ & {\color{red}} & {\color{red}+\sum_{n,\gamma,\sigma}\left\{ -T_{BP\gamma,n\sigma}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]+\gamma*\sigma*T_{BP\gamma,n\sigma}\left[\sigma\left(\mu_{n}-\mu_{s}\right)\right]\right\} }
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\partial_{\mu_{BP}}I_{BP}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+{\color{red}\frac{\partial I_{BP}}{\partial\mu_{BP}}} & {\color{red}=} & {\color{red}\sum_{n,\gamma,\sigma}T_{BP\gamma,n\sigma}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]-\sum_{\gamma,\sigma}\gamma*\sigma*T_{BP\gamma,BP\sigma}\left[\sigma\left(\mu_{BP}-\mu_{s}\right)\right]}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset Formula $\partial_{\Delta}I_{BP}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula 
+\begin{eqnarray*}
+{\color{red}\frac{\partial I_{BP}}{\partial\Delta}} & = & \int\sum_{n,\gamma,\sigma}\gamma*\frac{\partial T_{BP\gamma,n\sigma}}{\partial\Delta}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon\\
+ & {\color{red}=} & {\color{red}\int\sum_{n,\gamma,\sigma}\gamma*2\Re\left\{ \mathrm{Tr}\left[\Gamma_{BP\gamma}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)\Gamma_{n\sigma}G^{A}\right]\right\} \left[f_{BP}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By setting 
+\begin_inset Formula $F_{3}=-\frac{U_{i}}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}[G_{ii}^{<}(\omega)]_{41}\mathrm{d\omega}-\Delta_{i}$
+\end_inset
+
+, consider the derivative of 
+\begin_inset Formula $F_{3}$
+\end_inset
+
+.
+ Here, 
+\begin_inset Formula $G^{<}=G^{R}\Sigma^{<}G^{A}$
+\end_inset
+
+, and 
+\begin_inset Formula $\Sigma^{<}=\sum_{m,\gamma}\mathrm{i}f_{m}^{\gamma}\Gamma_{m\gamma}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+\begin_inset Formula $\partial_{\mu_{s}}F_{3}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+{\color{red}\frac{\partial F_{3}}{\partial\mu_{s}}} & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\frac{\partial G_{41}^{<}(\omega)}{\partial\mu_{s}}\mathrm{d\omega}\\
+ & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\frac{\partial}{\partial\mu_{s}}\left(G^{R}\Sigma^{<}G^{A}\right)_{41}\mathrm{d\omega}\\
+ & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[\left(\frac{\partial G^{R}}{\partial\mu_{s}}\right)\Sigma^{<}G^{A}\right]_{41}\mathrm{d\omega}-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\left(\frac{\partial}{\partial\mu_{s}}\Sigma^{<}\right)G^{A}\right]_{41}\mathrm{d\omega}-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\Sigma^{<}\frac{\partial G^{A}}{\partial\mu_{s}}\right]_{41}\mathrm{d\omega}\\
+ & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left(K_{\mu_{s}}\right)_{41}\mathrm{d\omega}-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\sum_{m,\gamma}\left(-\mathrm{i}\gamma*\delta\left[\omega-\gamma\left(\mu_{m}-\mu_{s}\right)\right]\right)G^{A}\right]_{41}\mathrm{d\omega}+\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left(K_{\mu_{s}}^{\dagger}\right)_{41}\mathrm{d\omega}\\
+ & {\color{red}=} & {\color{red}-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left(K_{\mu_{s}}-K_{\mu_{s}}^{\dagger}\right)_{41}\mathrm{d\omega}-\frac{U}{2\pi\mathbf{i}}\sum_{m,\gamma}\left\{ -\mathrm{i}\gamma*G^{R}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]G^{A}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]\right\} _{41}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset Formula $\partial_{\mu_{BP}}F_{3}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+{\color{red}\frac{\partial F_{3}}{\partial\mu_{BP}}} & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\frac{\partial G_{41}^{<}(\omega)}{\partial\mu_{BP}}\mathrm{d\omega}\\
+ & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\frac{\partial}{\partial\mu_{BP}}\left(G^{R}\Sigma^{<}G^{A}\right)_{41}\mathrm{d\omega}\\
+ & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\left(\frac{\partial}{\partial\mu_{BP}}\Sigma^{<}\right)G^{A}\right]_{41}\mathrm{d\omega}\\
+ & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\sum_{m,\gamma}\left(\delta_{m,BP}*\mathrm{i}\gamma*\delta\left[\omega-\gamma\left(\mu_{m}-\mu_{s}\right)\right]\right)G^{A}\right]_{41}\mathrm{d\omega}\\
+ & {\color{red}=} & {\color{red}-\frac{U}{2\pi\mathbf{i}}\sum_{\gamma}\left\{ \mathrm{i}\gamma*G^{R}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]G^{A}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]\right\} _{41}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset Formula $\partial_{\Delta}F_{3}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\partial_{\Delta}F_{3} & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\partial_{\Delta}G_{41}^{<}(\omega)\mathrm{d\omega}-1\\
+ & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\partial_{\Delta}\left(G^{R}\Sigma^{<}G^{A}\right)_{41}\mathrm{d\omega}-1\\
+ & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left\{ \left(\partial_{\Delta}G^{R}\right)\Sigma^{<}G^{A}+G^{R}\Sigma^{<}\left(\partial_{\Delta}G^{A}\right)\right\} _{41}\mathrm{d\omega}-1\\
+ & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left\{ \left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)\Sigma^{<}G^{A}+G^{R}\Sigma^{<}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)^{\dagger}\right\} _{41}\mathrm{d\omega}-1\\
+ & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left\{ K_{\Delta}-K_{\Delta}^{\dagger}\right\} _{41}\mathrm{d\omega}-1
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+with 
+\begin_inset Formula $K_{\Delta}\coloneqq G^{R}\frac{\partial H}{\partial\Delta}G^{R}\Sigma^{<}G^{A}$
+\end_inset
+
+.
 \end_layout
 
 \end_body
