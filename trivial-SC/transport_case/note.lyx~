@@ -386,7 +386,7 @@ Total current
 \begin_inset Formula 
 \begin{align*}
 \widetilde{I} & =\sum_{m}I_{m}\\
- & =\sum_{m}\int\gamma*\sum_{n,\gamma,\sigma}T_{m\gamma,n\sigma}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon
+ & =\sum_{m}\int\sum_{n,\gamma,\sigma}\gamma*T_{m\gamma,n\sigma}\left[f_{m}^{\gamma}\left(\epsilon\right)-f_{n}^{\sigma}\left(\epsilon\right)\right]\mathrm{d}\epsilon
 \end{align*}
 
 \end_inset
@@ -693,7 +693,7 @@ By setting
  & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\frac{\partial}{\partial\mu_{s}}\left(G^{R}\Sigma^{<}G^{A}\right)_{41}\mathrm{d\omega}\\
  & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[\left(\frac{\partial G^{R}}{\partial\mu_{s}}\right)\Sigma^{<}G^{A}\right]_{41}\mathrm{d\omega}-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\left(\frac{\partial}{\partial\mu_{s}}\Sigma^{<}\right)G^{A}\right]_{41}\mathrm{d\omega}-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\Sigma^{<}\frac{\partial G^{A}}{\partial\mu_{s}}\right]_{41}\mathrm{d\omega}\\
  & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left(K_{\mu_{s}}\right)_{41}\mathrm{d\omega}-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\sum_{m,\gamma}\left(-\mathrm{i}\gamma*\delta\left[\omega-\gamma\left(\mu_{m}-\mu_{s}\right)\right]\right)G^{A}\right]_{41}\mathrm{d\omega}+\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left(K_{\mu_{s}}^{\dagger}\right)_{41}\mathrm{d\omega}\\
- & {\color{red}=} & {\color{red}-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left(K_{\mu_{s}}-K_{\mu_{s}}^{\dagger}\right)_{41}\mathrm{d\omega}-\frac{U}{2\pi\mathbf{i}}\sum_{m,\gamma}\left\{ -\mathrm{i}\gamma*G^{R}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]G^{A}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]\right\} _{41}}
+ & {\color{red}=} & {\color{red}\frac{U}{2\pi}\int_{-\infty}^{+\infty}\mathbf{i}\left(K_{\mu_{s}}-K_{\mu_{s}}^{\dagger}\right)_{41}\mathrm{d\omega}+\frac{U}{2\pi}\sum_{m,\gamma}\left\{ \gamma*G^{R}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]G^{A}\left[\gamma\left(\mu_{m}-\mu_{s}\right)\right]\right\} _{41}}
 \end{eqnarray*}
 
 \end_inset
@@ -715,7 +715,7 @@ By setting
  & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\frac{\partial}{\partial\mu_{BP}}\left(G^{R}\Sigma^{<}G^{A}\right)_{41}\mathrm{d\omega}\\
  & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\left(\frac{\partial}{\partial\mu_{BP}}\Sigma^{<}\right)G^{A}\right]_{41}\mathrm{d\omega}\\
  & = & -\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left[G^{R}\sum_{m,\gamma}\left(\delta_{m,BP}*\mathrm{i}\gamma*\delta\left[\omega-\gamma\left(\mu_{m}-\mu_{s}\right)\right]\right)G^{A}\right]_{41}\mathrm{d\omega}\\
- & {\color{red}=} & {\color{red}-\frac{U}{2\pi\mathbf{i}}\sum_{\gamma}\left\{ \mathrm{i}\gamma*G^{R}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]G^{A}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]\right\} _{41}}
+ & {\color{red}=} & {\color{red}\frac{U}{2\pi}\sum_{\gamma}\left\{ -\gamma*G^{R}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]G^{A}\left[\gamma\left(\mu_{BP}-\mu_{s}\right)\right]\right\} _{41}}
 \end{eqnarray*}
 
 \end_inset
@@ -737,7 +737,7 @@ By setting
  & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\partial_{\Delta}\left(G^{R}\Sigma^{<}G^{A}\right)_{41}\mathrm{d\omega}-1\\
  & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left\{ \left(\partial_{\Delta}G^{R}\right)\Sigma^{<}G^{A}+G^{R}\Sigma^{<}\left(\partial_{\Delta}G^{A}\right)\right\} _{41}\mathrm{d\omega}-1\\
  & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left\{ \left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)\Sigma^{<}G^{A}+G^{R}\Sigma^{<}\left(G^{R}\frac{\partial H}{\partial\Delta}G^{R}\right)^{\dagger}\right\} _{41}\mathrm{d\omega}-1\\
- & =-\frac{U}{2\pi\mathbf{i}}\int_{-\infty}^{+\infty}\left\{ K_{\Delta}-K_{\Delta}^{\dagger}\right\} _{41}\mathrm{d\omega}-1
+ & =\frac{U}{2\pi}\int_{-\infty}^{+\infty}\mathbf{i}\left\{ K_{\Delta}-K_{\Delta}^{\dagger}\right\} _{41}\mathrm{d\omega}-1
 \end{align*}
 
 \end_inset
@@ -747,10 +747,28 @@ By setting
 \end_inset
 
 with 
-\begin_inset Formula $K_{\Delta}\coloneqq G^{R}\frac{\partial H}{\partial\Delta}G^{R}\Sigma^{<}G^{A}$
+\begin_inset Formula $K_{\Delta}\coloneqq\left(\partial_{\Delta}G^{R}\right)\Sigma^{<}G^{A}$
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+deltails of nonlinear solvers—lsqnonlin
 \end_layout
 
 \end_body
